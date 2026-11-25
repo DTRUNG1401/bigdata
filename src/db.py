@@ -85,4 +85,5 @@ if __name__ == "__main__":
     # Kiểm tra nhanh: python src/db.py
     ket_noi = get_db_hoac_thoat()
     print(f"Kết nối thành công tới database '{ket_noi.name}'.")
-    print("Các collection hiện có:", ket_noi.list_collection_names() or "(chưa có)")
+    cac_collection = ket_noi.list_collection_names()
+    print("Các collection hiện có:", cac_collection or "(chưa có)")

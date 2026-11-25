@@ -59,12 +59,12 @@ def _duong_dan(gia_tri):
 MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
 DB_NAME = os.getenv("DB_NAME", "ecommerce")
 
-# --- Nạp dữ liệu ---------------------------------------------------------------
+# --- Nạp dữ liệu -------------------------------------------------------------
 CSV_PATH = _duong_dan(os.getenv("CSV_PATH", "data/raw/2019-Oct.csv"))
 SAMPLE_PERCENT = _doc_so_nguyen("SAMPLE_PERCENT", 100, 1, 100)
 CHUNK_SIZE = _doc_so_nguyen("CHUNK_SIZE", 500_000, 1)
 
-# --- Huấn luyện ----------------------------------------------------------------
+# --- Huấn luyện --------------------------------------------------------------
 MIN_USER_INTERACTIONS = _doc_so_nguyen("MIN_USER_INTERACTIONS", 2, 1)
 
 # Điểm tương tác theo loại sự kiện (dùng cho bảng interactions)
@@ -73,7 +73,7 @@ EVENT_SCORES = {"view": 1, "cart": 3, "purchase": 5}
 # Thư mục lưu mô hình đã huấn luyện (đã được .gitignore)
 MODEL_DIR = PROJECT_ROOT / "models"
 
-# --- Tên các collection --------------------------------------------------------
+# --- Tên các collection ------------------------------------------------------
 COL_EVENTS = "events"
 COL_PRODUCTS = "products"
 COL_INTERACTIONS = "interactions"
