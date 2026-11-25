@@ -223,7 +223,9 @@ def run(
             f"Collection '{COL_EVENTS}' đã có dữ liệu. Nạp lại sẽ bị trùng "
             "lặp sự kiện và làm sai kết quả phân tích.\n"
             "  - Dùng --drop để xoá dữ liệu cũ rồi nạp lại từ đầu, hoặc\n"
-            "  - Dùng --append nếu cố ý nạp thêm file khác."
+            "  - Dùng --append nếu cố ý nạp thêm file khác, hoặc\n"
+            "  - (với run_pipeline.py) dùng --skip-import để giữ dữ liệu "
+            "đã nạp và chỉ chạy các bước sau."
         )
 
     print(f"Nạp file : {csv_path}")
