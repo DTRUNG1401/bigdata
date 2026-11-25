@@ -342,7 +342,7 @@ def _muc_pheu(mau):
     )
     hinh.update_layout(bargap=0.45)
     hinh.update_yaxes(autorange="reversed", showgrid=False)
-    hinh.update_xaxes(title=None, range=[0, max(gia_tri) * 1.45])
+    hinh.update_xaxes(title=None, range=[0, max(gia_tri) * 1.6])
     dinh_dang_hinh(hinh, mau, 280)
 
     trai, phai = st.columns([3, 1])
@@ -511,7 +511,7 @@ def _ve_cot_nhom(tom_tat, truong, nhan_truong, mau, ham_nhan):
     )
     hinh.update_layout(bargap=0.45)
     hinh.update_yaxes(autorange="reversed", automargin=True, showgrid=False)
-    hinh.update_xaxes(title=None, range=[0, thu_tu[truong].max() * 1.5])
+    hinh.update_xaxes(title=None, range=[0, thu_tu[truong].max() * 1.85])
     return dinh_dang_hinh(hinh, mau, 300)
 
 
