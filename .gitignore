@@ -1,0 +1,23 @@
+# Dữ liệu (file CSV rất lớn, không đưa lên GitHub)
+data/
+
+# Cấu hình cục bộ
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Mô hình đã huấn luyện
+models/
+*.npz
+
+# Công cụ / hệ điều hành
+.idea/
+.vscode/
+.pytest_cache/
+.DS_Store
+Thumbs.db
+*.log

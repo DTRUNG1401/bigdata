@@ -1,0 +1,27 @@
+# MongoDB cho đồ án "Phân tích dữ liệu thương mại điện tử và hệ thống gợi ý".
+# Khởi động:  docker compose up -d
+# Dừng:       docker compose down        (dữ liệu vẫn được giữ trong volume)
+# Xoá sạch:   docker compose down -v     (xoá cả dữ liệu)
+services:
+  mongo:
+    image: mongo:8.0
+    container_name: ecommerce-mongo
+    restart: unless-stopped
+    ports:
+      # Chỉ mở cổng cho máy cục bộ, không mở ra mạng ngoài.
+      - "127.0.0.1:27017:27017"
+    volumes:
+      # Volume đặt tên: dữ liệu không mất khi xoá/tạo lại container.
+      - mongo_data:/data/db
+    # Máy RAM thấp (8GB) có thể bỏ comment dòng dưới để giới hạn bộ nhớ đệm
+    # của MongoDB, nhường RAM cho bước huấn luyện mô hình:
+    # command: ["--wiredTigerCacheSizeGB", "2"]
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+
+volumes:
+  mongo_data:
